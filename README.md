@@ -57,4 +57,4 @@ I only code for fun as of right now, but I would like to focus on improving my k
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/liquidwater0)
+- Frontend Mentor - [@liquidwater0](https://www.frontendmentor.io/profile/liquidwater0)
