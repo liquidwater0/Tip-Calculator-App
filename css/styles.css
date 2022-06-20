@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+    --color-primary: hsl(172, 67%, 45%);
+    --color-neutral-600: hsl(183, 100%, 15%);
+    --color-neutral-500: hsl(186, 14%, 43%);
+    --color-neutral-400: hsl(184, 14%, 56%);
+    --color-neutral-300: hsl(185, 41%, 84%);
+    --color-neutral-200: hsl(189, 41%, 97%);
+    --color-neutral-100: hsl(0, 0%, 100%);
+    --error-color: hsl(0, 50%, 50%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-neutral-300);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 5px 0px;
+    border-radius: 4px;
+}
+
+input {
+    font-size: 24px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.heading-text {
+    color: var(--color-neutral-500);
+    font-size: 25px;
+}
+
+.main {
+    display: flex;
+    gap: 40px;
+    background-color: var(--color-neutral-100);
+    padding: 33px;
+    width: 800px;
+    border-radius: 25px;
+}
+
+.section-text {
+    color: var(--color-neutral-400);
+    padding: 15px 0px;
+}
+
+.inputs-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.error-message {
+    visibility: hidden;
+    color: var(--error-color);
+}
+
+.inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-neutral-200);
+    padding: 0px 15px;
+    gap: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.input-container.error {
+    outline: 2px solid var(--error-color) !important;
+}
+
+.input-container:hover {
+    outline: 2px solid var(--color-neutral-300);
+}
+
+.input-container input {
+    background-color: transparent;
+    color: var(--color-neutral-600);
+    text-align: right;
+}
+
+.input-container input::-webkit-outer-spin-button,
+.input-container input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.input-container input::placeholder {
+    color: var(--color-neutral-400);
+}
+
+.tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.tip-button {
+    background-color: var(--color-neutral-600);
+    color: var(--color-neutral-100);
+    font-size: 20px;
+    transition: 100ms;
+}
+
+.tip-button.selected {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-600);
+}
+
+.tip-button:not(.selected):hover {
+    background-color: var(--color-neutral-300);
+    color: var(--color-neutral-600);
+}
+
+.custom-tip-button {
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-500);
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-tip-button:focus {
+    outline: 3px solid var(--color-neutral-300);
+}
+
+.calculations-section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 25px;
+    background-color: var(--color-neutral-600);
+    border-radius: 10px;
+    padding: 25px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.calculations-section > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-neutral-100);
+    font-size: 14px;
+}
+
+.per-person-text {
+    color: var(--color-neutral-400);
+    font-size: 12px;
+}
+
+.amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 33px;
+}
+
+.amount * {
+    color: var(--color-primary);
+    fill: var(--color-primary);
+}
+
+.reset-button {
+    text-transform: uppercase;
+    margin-top: auto;
+    transition: 100ms;
+}
+
+.reset-button[disabled] {
+    opacity: 0.15;
+    cursor: not-allowed;
+}
+
+.reset-button,
+.reset-button[disabled]:hover {
+    background-color: var(--color-primary);
+    color: var(--color-neutral-600);
+}
+
+.reset-button:hover {
+    background-color: var(--color-neutral-300);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(200, 100%, 50%);
+    text-decoration: none;
+    transition: 200ms;
+}
+
+.attribution a:hover {
+    color: hsl(200, 100%, 33%);
+}
+
+@media (max-width: 800px) {
+    body {
+        margin: 150px 0px;
+        gap: 20px;
+    }
+
+    .main {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .input-container input {
+        width: 100%;
+    }
+
+    .tip-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .calculations-section {
+        aspect-ratio: initial;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        margin: 220px 0px;
+    }
+}
